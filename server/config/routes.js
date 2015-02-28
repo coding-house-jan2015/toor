@@ -7,5 +7,8 @@ module.exports = [
   {method: 'post', path: '/users', config: require('../routes/users/create')},
   {method: 'get', path: '/login', config: require('../routes/users/login')},
   {method: 'post', path: '/users/authenticate', config: require('../routes/users/authenticate')},
-  {method: 'post', path: '/logout', config: require('../routes/users/logout')}
+  {method: 'post', path: '/logout', config: require('../routes/users/logout')},
+
+  {method: 'get', path: '/trips/new', config: require('../routes/trips/new')},
+  {method: 'post', path: '/trips/search', config: require('../routes/trips/search')}
 ];
