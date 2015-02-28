@@ -9,7 +9,7 @@ var tripSchema = mongoose.Schema({
     createdAt: {type: Date, default: Date.now, required: true}
 });
 
-tripSchema.statics.search = function(o, cb) {
+tripSchema.statics.destinations = function(o, cb) {
   var options = {
     method: 'POST',
     url: 'https://api.test.sabre.com/v1/auth/token',
@@ -28,7 +28,7 @@ tripSchema.statics.search = function(o, cb) {
     // *****************************************
       var options = {
         method: 'GET',
-        url: 'https://api.test.sabre.com/v1/shop/themes',
+        url: 'https://api.test.sabre.com/v1/lists/top/destinations?origin=' + o.origin + '&region=' + o.region,
         headers: {
           'Authorization': 'Bearer ' + token
         }
@@ -37,6 +37,9 @@ tripSchema.statics.search = function(o, cb) {
       request(options, function(err, response, body){
         console.log('***err***', err);
         console.log('***body***', body);
+
+
+        cb(body);
       });
     // *****************************************
   });

@@ -5,16 +5,34 @@ block content
 
   .row
     .col-xs-4
-      form(method='post', action='/trips/build')
+      form#destination(method='post', action='/trips/destinations')
         .form-group
-          label(for='destination') Destination
-          input#destination.form-control(type='text', name='destination', autofocus=true)
+          label(for='origin') Origin
+          input#origin.form-control(type='text', name='origin', autofocus=true)
         .form-group
-          button.btn.btn-default(type='submit') Get Flights, Hotels, Cars
+          label(for='region') Region
+          select#region.form-control(name='region')
+            option(value='') Pick a Region
+            option Africa 
+            option Asia Pacific 
+            option Europe 
+            option Latin America 
+            option Middle East 
+            option North America 
+        .form-group
+          button.btn.btn-default#get-destinations(type='submit') Explore Destinations
     .col-xs-8
+
   .row
     .col-xs-4
-      form(method='post', action='/trips/search')
+      form#flight(method='post', action='/trips/flights')
         .form-group
-          button.btn.btn-default(type='submit') Explore Top Destinations
+          label(for='region') 
+          select#city.form-control(name='city')
+            option(value='') Pick a City
+        .form-group
+          button.btn.btn-default#get-flights(type='submit') Explore Flights
     .col-xs-8
+
+block scripts
+  script(src='/js/new-trip.js')
