@@ -1,3 +1,5 @@
+'use strict';
+
 $(document).ready(init);
 
 function init(){
@@ -14,7 +16,7 @@ function getDestinations(e){
       response.Destinations.forEach(function(d){
         var country = d.Destination.CountryName;
         var city = d.Destination.MetropolitanAreaName || d.Destination.CityName;
-        $('#city').append('<option>' + city + ', ' + country + '</option>')
+        $('#city').append('<option>' + city + ', ' + country + '</option>');
       });
     }
   });

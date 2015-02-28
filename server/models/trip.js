@@ -6,7 +6,11 @@ var Trip;
 
 var tripSchema = mongoose.Schema({
     title: {type: String, required: true},
-    createdAt: {type: Date, default: Date.now, required: true}
+    createdAt: {type: Date, default: Date.now, required: true},
+    departDate: {type: Date, required: true},
+    returnDate: {type: Date, required: true},
+    destinationCity: {type: String, required: true},
+    userId: {type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
 tripSchema.statics.destinations = function(o, cb) {

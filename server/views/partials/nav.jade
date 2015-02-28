@@ -1,4 +1,4 @@
-nav.navbar.navbar-default
+nav.navbar.navbar-default.animated-navbar.slideInLeft
   .container-fluid
     .navbar-header
       button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
@@ -12,6 +12,7 @@ nav.navbar.navbar-default
         li: a(href='/'): i.fa.fa-home &nbsp; Home
         if email
           li: a(href='/trips/new'): i.fa.fa-ship &nbsp; New Trip
+          li: a(href='/trips/' + _id + '/itinerary'): i.fa.fa-globe.nav-globe &nbsp; My Trips
           li
             form.navbar-form.navbar-right(method='post', action='/logout')
               button.btn.btn-default(type='submit')= email
