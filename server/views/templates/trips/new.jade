@@ -3,36 +3,46 @@ block content
 
   h3 New Trip
 
-  .row
-    .col-xs-4
-      form#destination(method='post', action='/trips/destinations')
-        .form-group
-          label(for='origin') Origin
-          input#origin.form-control(type='text', name='origin', autofocus=true)
-        .form-group
-          label(for='region') Region
-          select#region.form-control(name='region')
-            option(value='') Pick a Region
-            option Africa 
-            option Asia Pacific 
-            option Europe 
-            option Latin America 
-            option Middle East 
-            option North America 
-        .form-group
-          button.btn.btn-default#get-destinations(type='submit') Explore Destinations
-    .col-xs-8
+  .toorHeader1
+    .container
+      .row
+        .col-sm-4.col-xs-12          
+          .lead Where will you depart from?
+          form#destination(method='post', action='/trips/destinations')
+            .form-group
+              label(for='origin') Origin
+              input#origin.form-control(type='text', name='origin', autofocus=true)
+        .col-sm-4.col-xs-12    
+          .form-group
+            .lead Where do you want to go?
+            label(for='region') Region
+            select#region.form-control(name='region')
+              option(value='') Pick a Region
+              option Africa 
+              option Asia Pacific 
+              option Europe 
+              option Latin America 
+              option Middle East 
+              option North America 
+          .form-group
+            button.btn.btn-default#get-destinations(type='submit') Explore Destinations
+        .col-sm-4.col-xs-12
+          .form-group
+            .lead When do you want to go?
 
-  .row
-    .col-xs-4
-      form#flight(method='post', action='/trips/flights')
-        .form-group
-          label(for='region') 
-          select#city.form-control(name='city')
-            option(value='') Pick a City
-        .form-group
-          button.btn.btn-default#get-flights(type='submit') Explore Flights
-    .col-xs-8
+  .toorHeader2
+    .container
+      .row
+        .col-sm-4.col-xs-12
+          .lead Here are some cities:
+            form#flight(method='post', action='/trips/flights')
+              .form-group
+                label(for='region') 
+                select#city.form-control(name='city')
+                  option(value='') Pick a City
+              .form-group
+                button.btn.btn-default#get-flights(type='submit') Explore Flights
+          .col-sm-8.col-xs-12
 
 block scripts
   script(src='/js/new-trip.js')
