@@ -1,13 +1,13 @@
 'use strict';
 
 var Trip = require('../../models/trip');
-var _ = require('lodash');
 
 module.exports = {
   handler: function(request, reply) {
     Trip.findById(request.params.tripId, function(err, trip){
-      trip.suggestions(request.auth.credentials, function(histogram){
-        reply.view('templates/trips/show', {trip:trip, histogram:histogram});
+      trip.schedule(request.payload);
+      trip.save(function(){
+        reply(trip);
       });
     });
   }

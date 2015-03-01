@@ -1,6 +1,8 @@
 extends ../../layouts/master
 block content
 
+  div#trip-id(data-trip-id=trip._id.toString())
+
   h3 Itinerary Planner
   h5= trip.title
   p= trip.hashtag
@@ -11,3 +13,23 @@ block content
   p= trip.destinationCity
   
   include ../../partials/tweet
+
+  ul
+    each phrase in histogram
+      .suggestion
+        li
+          h6= phrase.suggestion
+          p= phrase.count
+          input(type='time')
+          button.add-suggestion.btn.btn-xs Add
+
+  button#save.btn.btn-warning SAVE
+
+  #itinerary
+    each i in trip.itinerary
+      .itinerary= i.date
+
+  #schedule
+
+block scripts
+  script(src='/js/show.js')
