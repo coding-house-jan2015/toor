@@ -7,6 +7,7 @@ module.exports = {
   validate: {
     payload: {
       email: Joi.string().email(),
+      twitter: Joi.string().required(),
       password: Joi.string().min(3)
     }
   },
