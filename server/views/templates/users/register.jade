@@ -1,20 +1,33 @@
 extends ../../layouts/master
 block content
+  .container-fluid
+    .row
+      .col-md-3.col-sm-1
+      .col-md-6.col-sm-10
+        .jumbotron#regHead
+          h3.register.page-header Register
+          form(method='post', action='/users')
+            .form-group
+              label(for='email') Email
+              input#email.form-control(type='email', name='email', autofocus=true, required)
+            .form-group
+              label(for='twitter') Twitter
+              #twitter.input-group
+                span#twitter.input-group-addon @
+                input#twitterForm.form-control(type='text', name='twitter', required)
+            #inputError.form-group
+              label(for='password') Password
+              input#password.form-control(type='password', name='password', required)
+              span#xIcon.glyphicon.glyphicon-remove.form-control-feedback
+              span#checkIcon.glyphicon.glyphicon-ok.form-control-feedback
+            .form-group
+              label(for='confirmPass') Confirm Password
+              input#confirmPass.form-control(type='password', required)
+            .form-group
+              button#register.btn.btn-default.disabled(type='submit') Register
+      .col-md-3.col-sm-1
 
-  h3 Register
 
-  .row
-    .col-xs-4
-      form(method='post', action='/users')
-        .form-group
-          label(for='email') Email
-          input#email.form-control(type='email', name='email', autofocus=true)
-        .form-group
-          label(for='twitter') Twitter
-          input#twitter.form-control(type='text', name='twitter')
-        .form-group
-          label(for='password') Password
-          input#password.form-control(type='password', name='password')
-        .form-group
-          button.btn.btn-default(type='submit') Register
-    .col-xs-8
+
+block scripts
+  script(src='/js/passValidation.js')

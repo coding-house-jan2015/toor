@@ -1,46 +1,43 @@
-extends ../../layouts/master
+extends ../../layouts/newMaster
 block content
-
-  h3 New Trip
-
-  .row
-    .col-xs-4
+  img.bg(src='http://40.media.tumblr.com/851df5c29986631721244d0f99d7bc9a/tumblr_nizbxio4TC1slhhf0o1_1280.jpg')
+  .loader
+  //- .background
+  .row.new-trip-row.animated.slideInLeft
+    .col-xs-12.text-center
       form#flights(method='post', action='/trips/flights')
-        .form-group
+        .form-group.special-form-group
           label(for='title') Name of Trip
           input#title.form-control(type='text', name='title', autofocus=true)
-        .form-group
+        .form-group.special-form-group
           label(for='originAirport') Origin Airport
-          input#originAirport.form-control(type='text', name='originAirport')
-        .form-group
+          input#originAirport.form-control(type='text', name='originAirport', value='SFO')
+        .form-group.special-form-group
           label(for='departureDate') Departure Date
           input#departureDate.form-control(type='date', name='departureDate')
-        .form-group
+        .form-group.special-form-group
           label(for='returnDate') Return Date
           input#returnDate.form-control(type='date', name='returnDate')
-        .form-group
+        .form-group.special-form-group
           label(for='theme') Theme
           select#theme.form-control(name='theme')            
             option(value='') Pick a Theme
-            option BEACH 
-            option DISNEY 
-            option GAMBLING 
-            option HISTORIC 
-            option MOUNTAINS 
-            option NATIONAL-PARKS 
-            option OUTDOORS 
-            option ROMANTIC 
-            option SHOPPING 
-            option SKIING 
-            option THEME-PARK 
-        .form-group
-          button.btn.btn-default#get-flights(type='submit') Explore Flights
+            option(value='BEACH') Beach
+            option(value='DISNEY') Disney
+            option(value='GAMBLING') Gambling
+            option(value='HISTORIC') Historic
+            option(value='MOUNTAINS') Mountains
+            option(value='NATIONAL-PARKS ') National-Parks
+            option(value='OUTDOORS ') Outdoors
+            option(value='ROMANTIC') Romantic 
+            option(value='SHOPPING') Shopping
+            option(value='SKIING') Skiing
+            option(value='THEME-PARK') Theme-Park
+        .form-group.special-form-group
+          button.btn.btn-success#get-flights(type='submit') Explore Flights
     .col-xs-8
 
-  .row
-    .col-xs-4
-      .flights
-    .col-xs-8
+  .row.flights
 
 block scripts
   script(src='/js/new-trip.js')

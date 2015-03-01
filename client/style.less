@@ -1,9 +1,368 @@
-.flight{
+/* --------Font--------- */
+body {
+  font-family: 'Comfortaa';
+}
+
+h1, h2, h3, h4, h6, h6 {
+  font-family: 'Comfortaa';
+}
+
+/* Homepage Video */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,%20800');
+
+video {
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -100;
+ background-size: cover;
+}
+
+button.btn.btn-primary{
+  padding: 0vh 4vw;
+  margin-top: 0px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  border: 0;
+}
+
+.title{
+  font-size: 20vw;
+  color: rgba(255, 255, 255, 0.67);
+  font-family: 'Comfortaa';
+  font-weight: 700;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.tagline{
+  font-size: 6vh;
+  color: white;
+  margin-top: -7vh;
+}
+
+.cta{
+  font-size:4vw;
+  font-family: 'Open Sans';
+  text-align: center;
+}
+.anchor-cta{
+  text-decoration: none;
+}
+i.fa.fa-globe.nav-globe{
+  font-size:1em;
+  padding: 0;
+  color: #fff;
+}
+
+/* Homepage Footer */
+
+.api-row{
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+}
+
+.api-row{
+  margin-top:75px;
+}
+
+.logos{
   display: inline-block;
-  margin: 10px;
-  border: 1px solid black;
-  padding: 10px;
-  background-color: pink;
+  width:9.7%;
+  text-align:center;
+  color:white;
+}
+
+.logos img{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.logos img:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+#sabre{
+  width:125px;
+  text-align:right;
+}
+
+#twitter{
+  width:50px;
+
+}
+
+#coinbase{
+  width:125px;
+}
+
+#club{
+  width:125px;
+}
+
+#expedia{
+  width:100px;
+}
+
+#gulp{
+  width:100px;
+}
+
+#node{
+  width:100px;
+}
+
+#mongo{
+  width:100px;
+}
+
+#hapi{
+  width:100px;
+}
+
+#mongoose{
+  width:100px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#gulp{
+  width:100px;
+}
+
+
+/* Animations */
+
+.animated-globe {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+//
+// .animated-navbar{
+//   -webkit-animation-duration: 2s;
+//           animation-duration: 2s;
+//   -webkit-animation-fill-mode: both;
+//           animation-fill-mode: both;
+// }
+
+/* New Trips Page */
+
+.row.new-trip-row.animated.slideInLeft{
+  margin-top: 60px;
+}
+
+.form-group.special-form-group {
+display: inline-block;
+}
+
+select.form-control#theme {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+select.form-control#theme option:first-letter{
+  text-transform: lowercase;
+}
+
+.new-trip-row input,
+.new-trip-row select{
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+.new-trip-row label{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.new-trip-row input:focus,
+select#theme:focus{
+  border-bottom:3px solid #fff;
+}
+
+.flights{
+
+}
+
+.packages{
+  background: rgba(0, 0, 0, 0.54);
+  height: 150px;
+  border: none !important;
+  border-radius: 10px;
+  color: white;
+  margin-top: 5vh;
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.packages:hover {
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.fare:before {
+   content: "$ ";
+}
+
+p.fare {
+  font-size: 3.5vh;
+  display: inline-block;
+  float: left;
+}
+
+p.city {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 100%;
+}
+
+p.airport {
+  font-size: 3.5vh;
+  display: inline-block;
+  float: right;
+}
+
+.fare:before {
+   content: "$ ";
+}
+
+.btn.btn-success#get-flights{
+  border-radius: 5px;
+  margin-left: 7px;
+  display: block;
+}
+
+
+/* animated loading gif */
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('/media/gif/load.gif') 50% 50% no-repeat rgba(0, 0, 0, 0.54);
+  visibility: hidden;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+
+// *************** Login / Register CSS ***********************
+span#xIcon {
+  visibility: hidden;
+}
+
+span#checkIcon {
+  visibility: hidden;
+}
+
+.backgroundRegister {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgb(34, 34, 34);
+ z-index: -1;
+
+}
+
+#logHead, #regHead {
+  margin-top: 5%;
+  background: rgb(34, 34, 34);
+  border-radius: 10px !important;
+  color: white;
+  padding: 1em 3em;
+}
+
+// #regHead {
+//   margin-top: 5%;
+//   background: white;
+//   border-radius: 10px;
+//   padding: 1em 3em;
+//   color: black;
+// }
+
+input#email {
+  border-radius: 5px;
+  autofocus: true;
+}
+
+input#twitterForm {
+  border-radius: 0px 5px 5px 0px;
+  width: 100%;
+}
+
+span#twitter {
+  border-radius: 5px 0px 0px 5px;
+}
+
+input#password, input#confirmPass {
+  border-radius: 5px;
+}
+
+#twitter.input-group {
+  width: 100%
+}
+
+h3.login, h3.register {
+  margin-top: 0px;
+  font-weight: 400;
+  text-align: center;
+}
+
+button#login, button#register {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+/* New Trip Nav */
+nav.navbar.navbar-default.animated-navbar.new-nav,
+nav.navbar.navbar-default.animated-navbar.new-nav .btn-default{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.navbar.navbar-default.animated-navbar.new-nav .btn-default{
+  border: none;
 }
 
 .itinerary{
