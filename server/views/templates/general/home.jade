@@ -2,14 +2,14 @@ extends ../../layouts/noNav
 block content
   .container-fluid
     .row.text-center
-      .lead.title TOOR
+      .title TOOR
+      p.tagline Crowdsource Your Vacation
       button.btn.btn-primary
-       i.fa.fa-globe 
        if email
-         a(href='/trips/new', style='color: rgba(255, 255, 255, 0.67);')
+         a.anchor-cta(href='/trips/new', style='color: rgba(255, 255, 255, 0.67); text-decoration: none;')
            span.cta Let's go!
        else
-         a(href='/login', style='color: white;') 
+         a.anchor-cta(href='/login', style='color: rgba(255, 255, 255, 0.67); text-decoration: none;') 
           span.cta Let's go!
          
     .row.api-row

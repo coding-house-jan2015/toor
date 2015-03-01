@@ -17,7 +17,7 @@ module.exports = {
         reply.redirect('/login');
       } else {
         request.auth.session.set(user);
-        reply.redirect('/');
+        reply.redirect('/trips/new');
       }
     });
   }

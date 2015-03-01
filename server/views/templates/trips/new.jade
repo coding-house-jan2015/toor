@@ -6,34 +6,34 @@ block content
   .row.new-trip-row
     .col-xs-12.text-center
       form#flights(method='post', action='/trips/flights')
-        .form-group
+        .form-group.special-form-group
           label(for='title') Name of Trip
           input#title.form-control(type='text', name='title', autofocus=true)
-        .form-group
+        .form-group.special-form-group
           label(for='originAirport') Origin Airport
-          input#originAirport.form-control(type='text', name='originAirport')
-        .form-group
+          input#originAirport.form-control(type='text', name='originAirport', value='SFO')
+        .form-group.special-form-group
           label(for='departureDate') Departure Date
           input#departureDate.form-control(type='date', name='departureDate')
-        .form-group
+        .form-group.special-form-group
           label(for='returnDate') Return Date
           input#returnDate.form-control(type='date', name='returnDate')
-        .form-group
+        .form-group.special-form-group
           label(for='theme') Theme
           select#theme.form-control(name='theme')            
             option(value='') Pick a Theme
-            option BEACH 
-            option DISNEY 
-            option GAMBLING 
-            option HISTORIC 
-            option MOUNTAINS 
-            option NATIONAL-PARKS 
-            option OUTDOORS 
-            option ROMANTIC 
-            option SHOPPING 
-            option SKIING 
-            option THEME-PARK 
-        .form-group
+            option(value='BEACH') Beach
+            option(value='DISNEY') Disney
+            option(value='GAMBLING') Gambling
+            option(value='HISTORIC') Historic
+            option(value='MOUNTAINS') Mountains
+            option(value='NATIONAL-PARKS ') National-Parks
+            option(value='OUTDOORS ') Outdoors
+            option(value='ROMANTIC') Romantic 
+            option(value='SHOPPING') Shopping
+            option(value='SKIING') Skiing
+            option(value='THEME-PARK') Theme-Park
+        .form-group.special-form-group
           button.btn.btn-success#get-flights(type='submit') Explore Flights
     .col-xs-8
 

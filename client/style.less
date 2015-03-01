@@ -23,21 +23,14 @@ video {
 }
 
 button.btn.btn-primary{
-  padding: 0vh 22vw;
-  margin-top: -75px;
+  padding: 0vh 4vw;
+  margin-top: 0px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.54);
-  border: 2px solid #fff;
-}
-
-i.fa.fa-globe {
-  font-size: 6vw;
-  display: inline-block;
-  padding: 0 15px;
-  border-radius: 0;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
-
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  border: 0;
 }
 
 .title{
@@ -49,10 +42,19 @@ i.fa.fa-globe {
   text-transform: uppercase;
 }
 
+.tagline{
+  font-size: 7vh;
+  color: white;
+  margin-top: -7vh;
+}
+
 .cta{
-  font-size:6vw;
+  font-size:4vw;
   font-family: 'Open Sans';
   text-align: center;
+}
+.anchor-cta{
+  text-decoration: none;
 }
 i.fa.fa-globe.nav-globe{
   font-size:1em;
@@ -155,7 +157,7 @@ i.fa.fa-globe.nav-globe{
 
 /* New Trips Page */
 
-.form-group {
+.form-group.special-form-group {
 display: inline-block;
 }
 
@@ -164,10 +166,17 @@ select.form-control#theme {
   color: #fff;
 }
 
-.new-trip-row input{
+select.form-control#theme option:first-letter{
+  text-transform: lowercase;
+}
+
+.new-trip-row input,
+.new-trip-row select{
   background: rgba(0, 0, 0, 0.54);
   color: #fff;
   border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #fff;
 }
 
 .new-trip-row label{
@@ -176,7 +185,7 @@ select.form-control#theme {
 
 .new-trip-row input:focus,
 select#theme:focus{
-  border:3px solid #fff;
+  border-bottom:3px solid #fff;
 }
 
 .flights{
