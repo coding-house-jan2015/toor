@@ -45,10 +45,9 @@ block content
     .col-sm-6
       .row
         .col-xs-12.text-center
-          i.fa.fa-floppy-o#save
-      .row
-        if !trip.isComplete
-          button.btn.btn-default#complete Complete
+          button.btn-btn-default#save SAVE
+          if !trip.isComplete
+            button.btn.btn-default#complete Complete
         #schedule
 
 block scripts
