@@ -6,7 +6,7 @@ var _ = require('lodash');
 module.exports = {
   handler: function(request, reply) {
     Trip.findById(request.params.tripId, function(err, trip){
-      reply.view('templates/trips/show', {trip:trip, title:_.snakeCase(trip.title)});
+      reply.view('templates/trips/show', {trip:trip});
     });
   }
 };

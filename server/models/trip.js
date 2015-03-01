@@ -7,6 +7,7 @@ var Trip;
 
 var tripSchema = mongoose.Schema({
     title: {type: String, required: true},
+    hashtag: {type: String, required: true},
     originAirport: {type: String, required: true},
     destinationAirport: {type: String, required: true},
     destinationCity: {type: String, required: true},
