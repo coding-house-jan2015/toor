@@ -2,4 +2,9 @@ extends ../../layouts/master
 block content
 
   h3 Itinerary Planner
-  code= trip
+  h5= trip.title
+  p= trip.departureDate
+  p= trip.returnDate
+  p= trip.theme
+  p= trip.fare
+  p= trip.destinationCity
