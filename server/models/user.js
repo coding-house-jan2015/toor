@@ -2,6 +2,8 @@
 
 var bcrypt = require('bcrypt');
 var mongoose = require('mongoose');
+var Message = require('./message');
+
 var User;
 
 var userSchema = mongoose.Schema({
@@ -12,12 +14,28 @@ var userSchema = mongoose.Schema({
 });
 
 userSchema.statics.register = function(o, cb) {
+  console.log('register USER', User);
+
   User.findOne({email:o.email}, function(err, user) {
     if (user) {return cb(true);}
 
     user = new User(o);
+
     user.password = bcrypt.hashSync(o.password, 8);
-    user.save(cb);
+    user.save(function(err, u) {
+      if(!err) {
+        console.log('user saved', u.email);
+        Message.registration(o.email, function(err, result) {
+          if (err) {
+            console.log('message error:', err);
+            cb(err);
+          } else {
+            console.log('message send result:', result);
+            cb(null, result);
+          }
+        });
+      }
+    });
   });
 };
 
