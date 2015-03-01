@@ -29,6 +29,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "async": "^0.9.0",
     "bcrypt": "^0.8.1",
     "good": "^5.1.1",
     "good-console": "^4.1.0",
