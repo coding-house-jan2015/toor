@@ -5,33 +5,41 @@ block content
 
   .row
     .col-xs-4
-      form#destination(method='post', action='/trips/destinations')
+      form#flights(method='post', action='/trips/flights')
         .form-group
-          label(for='origin') Origin
-          input#origin.form-control(type='text', name='origin', autofocus=true)
+          label(for='title') Name of Trip
+          input#title.form-control(type='text', name='title', autofocus=true)
         .form-group
-          label(for='region') Region
-          select#region.form-control(name='region')
-            option(value='') Pick a Region
-            option Africa 
-            option Asia Pacific 
-            option Europe 
-            option Latin America 
-            option Middle East 
-            option North America 
+          label(for='originAirport') Origin Airport
+          input#originAirport.form-control(type='text', name='originAirport')
         .form-group
-          button.btn.btn-default#get-destinations(type='submit') Explore Destinations
+          label(for='departureDate') Departure Date
+          input#departureDate.form-control(type='date', name='departureDate')
+        .form-group
+          label(for='returnDate') Return Date
+          input#returnDate.form-control(type='date', name='returnDate')
+        .form-group
+          label(for='theme') Theme
+          select#theme.form-control(name='theme')            
+            option(value='') Pick a Theme
+            option BEACH 
+            option DISNEY 
+            option GAMBLING 
+            option HISTORIC 
+            option MOUNTAINS 
+            option NATIONAL-PARKS 
+            option OUTDOORS 
+            option ROMANTIC 
+            option SHOPPING 
+            option SKIING 
+            option THEME-PARK 
+        .form-group
+          button.btn.btn-default#get-flights(type='submit') Explore Flights
     .col-xs-8
 
   .row
     .col-xs-4
-      form#flight(method='post', action='/trips/flights')
-        .form-group
-          label(for='region') 
-          select#city.form-control(name='city')
-            option(value='') Pick a City
-        .form-group
-          button.btn.btn-default#get-flights(type='submit') Explore Flights
+      .flights
     .col-xs-8
 
 block scripts
