@@ -1,18 +1,18 @@
 extends ../../layouts/master
 block content
-
-  .row
-    .col-xs-3
-    .col-xs-6
-      .jumbotron
-        h3.pageHeader Login
-        form(method='post', action='/users/authenticate')
-          .form-group
-            label(for='email') Email
-            input#email.form-control(type='email', name='email', autofocus=true)
-          .form-group
-            label(for='password') Password
-            input#password.form-control(type='password', name='password')
-          .form-group
-            button.btn.btn-default(type='submit') Login
-    .col-xs-3
+  .container-fluid
+    .row
+      .col-md-3.col-sm-1
+      .col-md-6.col-sm-10
+        .jumbotron#logHead
+          h3.login.page-header Login
+          form(method='post', action='/users/authenticate')
+            .form-group
+              label(for='email') Email
+              input#email.form-control(placeholder='Email', type='email', name='email', autofocus=true)
+            .form-group
+              label(for='password') Password
+              input#password.form-control(placeholder='Password', type='password', name='password')
+            .form-group
+              button#login.btn.btn-default(type='submit') Login
+      .col-md-3.col-sm-1
