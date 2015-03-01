@@ -15,23 +15,27 @@ block content
       span.trip-return Return 
       i.fa.fa-arrow-circle-left.inverse.fa-2x
       span.trip-return= moment(trip.returnDate).format("MMM Do YY")
-  .row
-    .col-xs-12.text-center.tweet-button
-      h3.tweet-cta= 'Tweet your #' + trip.hashtag
-      include ../../partials/tweet
+
+  if !trip.isComplete
+    .row
+      .col-xs-12.text-center.tweet-button
+        h3.tweet-cta= 'Tweet your #' + trip.hashtag
+        include ../../partials/tweet
   .row.generator
     .col-sm-3.text-center
-      i.fa.fa-map-marker
-        .row
-          each phrase in histogram
-            .col-xs-12.hashtag-wrapper
-              .row
-                .col-xs-12.reco-hash
-                  span.suggestion= phrase.suggestion
-              .row
-                .col-xs-12.reco-add
-                  input(type='time')
-                  button.add-suggestion.btn.btn-xs +
+      
+      if !trip.isComplete
+        i.fa.fa-map-marker
+          .row
+            each phrase in histogram
+              .col-xs-12.hashtag-wrapper
+                .row
+                  .col-xs-12.reco-hash
+                    span.suggestion= phrase.suggestion
+                .row
+                  .col-xs-12.reco-add
+                    input(type='time')
+                    button.add-suggestion.btn.btn-xs +
     .col-sm-3.text-center
       i.fa.fa-calendar
         .row
@@ -43,7 +47,8 @@ block content
         .col-xs-12.text-center
           i.fa.fa-floppy-o#save
       .row
-        button.btn.btn-default#complete Complete
+        if !trip.isComplete
+          button.btn.btn-default#complete Complete
         #schedule
 
 block scripts

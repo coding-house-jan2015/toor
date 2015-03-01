@@ -15,5 +15,6 @@ module.exports = [
   {method: 'get', path: '/trips/{tripId}/itinerary', config: require('../routes/trips/show')},
   {method: 'get', path: '/trips', config: require('../routes/trips/index')},
   {method: 'post', path: '/trips/{tripId}/calendar', config: require('../routes/trips/calendar')},
-  {method: 'get', path: '/trips/{tripId}/fetch', config: require('../routes/trips/fetch')}
+  {method: 'get', path: '/trips/{tripId}/fetch', config: require('../routes/trips/fetch')},
+  {method: 'post', path: '/trips/{tripId}/complete', config: require('../routes/trips/complete')}
 ];

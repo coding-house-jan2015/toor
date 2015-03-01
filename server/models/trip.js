@@ -19,6 +19,7 @@ var tripSchema = mongoose.Schema({
     itinerary: [mongoose.Schema.Types.Mixed],
     theme: {type: String, required: true},
     fare: {type: Number, required: true},
+    isComplete: {type: Boolean, required: true, default: false},
     userId: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
     createdAt: {type: Date, default: Date.now, required: true}
 });

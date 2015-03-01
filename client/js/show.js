@@ -13,6 +13,7 @@ function complete(){
     type:'post',
     dataType: 'json',
     success: function(response){
+      window.location = '';
     }
   });
 }
