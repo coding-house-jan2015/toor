@@ -4,13 +4,13 @@ block content
     .row.text-center.animated.fadeInUp
       .title TOOR
       p.tagline Crowdsource Your Vacation
-      button.btn.btn-primary
+      button.btn.btn-primary.btn-success.homeBtn
        if email
          a.anchor-cta(href='/trips/new', style='color: rgba(255, 255, 255, 0.67); text-decoration: none;')
-           span.cta Let's jet!
+           span.cta Go!
        else
          a.anchor-cta(href='/login', style='color: rgba(255, 255, 255, 0.67); text-decoration: none;') 
-          span.cta Let's jet!
+          span.cta Go!
 
     .row.api-row
       .logos
