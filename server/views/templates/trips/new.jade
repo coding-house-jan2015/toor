@@ -1,9 +1,9 @@
-extends ../../layouts/master
+extends ../../layouts/newMaster
 block content
   img.bg(src='http://40.media.tumblr.com/851df5c29986631721244d0f99d7bc9a/tumblr_nizbxio4TC1slhhf0o1_1280.jpg')
   .loader
   //- .background
-  .row.new-trip-row
+  .row.new-trip-row.animated.slideInLeft
     .col-xs-12.text-center
       form#flights(method='post', action='/trips/flights')
         .form-group.special-form-group

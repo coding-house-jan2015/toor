@@ -43,7 +43,7 @@ button.btn.btn-primary{
 }
 
 .tagline{
-  font-size: 7vh;
+  font-size: 6vh;
   color: white;
   margin-top: -7vh;
 }
@@ -132,6 +132,8 @@ i.fa.fa-globe.nav-globe{
 
 #mongoose{
   width:100px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #gulp{
@@ -157,12 +159,16 @@ i.fa.fa-globe.nav-globe{
 
 /* New Trips Page */
 
+.row.new-trip-row.animated.slideInLeft{
+  margin-top: 60px;
+}
+
 .form-group.special-form-group {
 display: inline-block;
 }
 
 select.form-control#theme {
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
 
@@ -172,7 +178,7 @@ select.form-control#theme option:first-letter{
 
 .new-trip-row input,
 .new-trip-row select{
-  background: rgba(0, 0, 0, 0.54);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   border-radius: 5px;
   border: none;
@@ -180,7 +186,7 @@ select.form-control#theme option:first-letter{
 }
 
 .new-trip-row label{
-  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .new-trip-row input:focus,
@@ -347,4 +353,14 @@ button#login, button#register {
   background: white;
   color: black;
   border-radius: 5px;
+}
+
+/* New Trip Nav */
+nav.navbar.navbar-default.animated-navbar.new-nav,
+nav.navbar.navbar-default.animated-navbar.new-nav .btn-default{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.navbar.navbar-default.animated-navbar.new-nav .btn-default{
+  border: none;
 }

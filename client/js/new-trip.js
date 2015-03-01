@@ -15,7 +15,7 @@ function getFlights(e){
     success: function(response){
       $('.flights').empty();
       response.results.forEach(function(f){
-        var html = '<div class="col-sm-4"><div class="row"><div class="col-sm-offset-1 col-sm-10 col-xs-offset-2 col-xs-8 packages"><p class="fare">'+f.LowestFare+'</p><p class="airport">'+f.DestinationLocation+'</p><p class="city">'+f.DestinationCity+'</p></div></div></div>';
+        var html = '<div class="col-sm-4"><div class="row"><div class="col-sm-offset-1 col-sm-10 col-xs-offset-2 col-xs-8 packages"><p class="fare">'+f.LowestFare.toFixed(0)+'</p><p class="airport">'+f.DestinationLocation+'</p><p class="city">'+f.DestinationCity+'</p></div></div></div>';
         $('.flights').append(html);
         $('.loader').css({"visibility": "hidden"});
       });
