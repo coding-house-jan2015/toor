@@ -14,7 +14,7 @@ var tripSchema = mongoose.Schema({
     returnDate: {type: Date, required: true},
     theme: {type: String, required: true},
     fare: {type: Number, required: true},
-    userId: {type: mongoose.Schema.ObjectId, ref: 'User', require: true},
+    userId: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
     createdAt: {type: Date, default: Date.now, required: true}
 });
 
