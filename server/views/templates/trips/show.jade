@@ -2,53 +2,84 @@ extends ../../layouts/master
 block content
 
   div#trip-id(data-trip-id=trip._id.toString())
-  .row.title-block
-    .col-sm-offset-2.col-sm-8.col-xs-12
-      .row
-        .col-sm-6.col-xs-12trip-details
-          h2= trip.title
-          h5= trip.destinationCity
-          h5= trip.theme
-          h6= trip.fare
-        .col-sm-6.col-xs-12
-          .row
-            .col-xs-12.trip-dates
-              h5= trip.departureDate
-              h5= trip.returnDate
-          .row
-            .col-xs-6.trip-hash
-              h4= '#' + trip.hashtag
-            .col-xs-6.trip-tweet
-              include ../../partials/tweet
-  
-  .row.reco-block
-    .col-sm-2.col-xs-12.reco-place.text-center
+  img.bg.show-page(src='https://ununsplash.imgix.net/photo-1422464804701-7d8356b3a42f?q=75&fm=jpg&s=16b012c7997852a115d858cf93583e3b')
+  .row.show-main-header
+    .col-xs-12.col-sm-4.text-right
+      span.trip-depart Depart 
+      i.fa.fa-arrow-circle-left.inverse.fa-flip-horizontal.fa-2x
+      span.trip-depart= moment(trip.departureDate).format("MMM Do YY")
+    .col-xs-12.col-sm-4.text-center
+      span.trip-title= trip.title
+      span.trip-dest= _.trunc(trip.destinationCity, 15)
+    .col-xs-12.col-sm-4
+      span.trip-return Return 
+      i.fa.fa-arrow-circle-left.inverse.fa-2x
+      span.trip-return= moment(trip.returnDate).format("MMM Do YY")
+  .row
+    .col-xs-12.text-center.tweet-button
+      h3.tweet-cta= 'Tweet your #' + trip.hashtag
+      include ../../partials/tweet
+  .row.generator
+    .col-sm-3.text-center
       i.fa.fa-map-marker
-      .row
-        each phrase in histogram
-          .col-xs-12.hashtag-wrapper
-            .row
-              .col-xs-12.reco-hash
-                i.fa.fa-location-arrow
-                span= phrase.suggestion
-            .row
-              .col-xs-12.reco-add
-                input(type='time')
-                button.add-suggestion.btn.btn-xs +
-            .row
-              .col-xs-12.reco-count
-                span= phrase.count + ' Recos!'
-    .col-sm-2.col-xs-12.reco-date.text-center
+        .row
+          each phrase in histogram
+            .col-xs-12.hashtag-wrapper
+              .row
+                .col-xs-12.reco-hash
+                  span.suggestion= phrase.suggestion
+              .row
+                .col-xs-12.reco-add
+                  input(type='time')
+                  button.add-suggestion.btn.btn-xs +
+    .col-sm-3.text-center
       i.fa.fa-calendar
+        .row
+          .col-xs-12
+            each i in trip.itinerary
+              .itinerary= moment(i.date).format("MMM Do YY")
+    .col-sm-6
       .row
-        .col-xs-12
-          each i in trip.itinerary
-            .itinerary= i.date
-    .col-sm-2.col-xs-12reco-schedule.text-center
-      i.fa.fa-floppy-o
-      button#save.btn.btn-warning SAVE
-    .col-sm-6.col-xs-12
-      #schedule
+        .col-xs-12.text-center
+          i.fa.fa-floppy-o
+      .row
+        #schedule
+        
+    
+    
+    
+    
+    
+    
+
+  //- .row.reco-block
+  //-   .col-sm-2.col-xs-12.reco-place.text-center
+  //-     i.fa.fa-map-marker
+  //-     .row
+  //-       each phrase in histogram
+  //-         .col-xs-12.hashtag-wrapper
+  //-           .row
+  //-             .col-xs-12.reco-hash
+  //-               i.fa.fa-location-arrow
+  //-               span= phrase.suggestion
+  //-           .row
+  //-             .col-xs-12.reco-add
+  //-               input(type='time')
+  //-               button.add-suggestion.btn.btn-xs +
+  //-           .row
+  //-             .col-xs-12.reco-count
+  //-               span= phrase.count + ' Recos!'
+  //-   .col-sm-2.col-xs-12.reco-date.text-center
+  //-     i.fa.fa-calendar
+  //-     .row
+  //-       .col-xs-12
+  //-         each i in trip.itinerary
+  //-           .itinerary= i.date
+  //-   .col-sm-2.col-xs-12reco-schedule.text-center
+  //-     i.fa.fa-floppy-o
+  //-     button#save.btn.btn-warning SAVE
+  //-   .col-sm-6.col-xs-12
+  //-     #schedule
 
 block scripts
   script(src='/js/show.js')
