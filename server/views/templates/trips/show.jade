@@ -37,49 +37,14 @@ block content
         .row
           .col-xs-12
             each i in trip.itinerary
-              .itinerary= moment(i.date).format("MMM Do YY")
+              .itinerary= i.date
     .col-sm-6
       .row
         .col-xs-12.text-center
-          i.fa.fa-floppy-o
+          i.fa.fa-floppy-o#save
       .row
+        button.btn.btn-default#complete Complete
         #schedule
-        
-    
-    
-    
-    
-    
-    
-
-  //- .row.reco-block
-  //-   .col-sm-2.col-xs-12.reco-place.text-center
-  //-     i.fa.fa-map-marker
-  //-     .row
-  //-       each phrase in histogram
-  //-         .col-xs-12.hashtag-wrapper
-  //-           .row
-  //-             .col-xs-12.reco-hash
-  //-               i.fa.fa-location-arrow
-  //-               span= phrase.suggestion
-  //-           .row
-  //-             .col-xs-12.reco-add
-  //-               input(type='time')
-  //-               button.add-suggestion.btn.btn-xs +
-  //-           .row
-  //-             .col-xs-12.reco-count
-  //-               span= phrase.count + ' Recos!'
-  //-   .col-sm-2.col-xs-12.reco-date.text-center
-  //-     i.fa.fa-calendar
-  //-     .row
-  //-       .col-xs-12
-  //-         each i in trip.itinerary
-  //-           .itinerary= i.date
-  //-   .col-sm-2.col-xs-12reco-schedule.text-center
-  //-     i.fa.fa-floppy-o
-  //-     button#save.btn.btn-warning SAVE
-  //-   .col-sm-6.col-xs-12
-  //-     #schedule
 
 block scripts
   script(src='/js/show.js')

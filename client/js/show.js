@@ -4,6 +4,17 @@ function init(){
   $('.itinerary').click(clickDate);
   $('.add-suggestion').click(addSuggestion);
   $('#save').click(save);
+  $('#complete').click(complete);
+}
+
+function complete(){
+  $.ajax({
+    url: '/trips/' + $('#trip-id').data('trip-id') + '/complete',
+    type:'post',
+    dataType: 'json',
+    success: function(response){
+    }
+  });
 }
 
 function clickDate(){
@@ -26,8 +37,8 @@ function clickDate(){
 }
 
 function addSuggestion(){
-  var name = $(this).siblings('h6').text();
-  var time = $(this).siblings('input').val();
+  var name = $(this).parent().parent().parent().find('.suggestion').text()
+  var time = $(this).parent().find('input').val()
   $('#schedule').append('<div class="schedule"><div class="name">'+name+'</div><div class="time">'+time+'</div></div>');
 }
 
