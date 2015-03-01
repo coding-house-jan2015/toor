@@ -1,6 +1,5 @@
 extends ../../layouts/master
 block content
-
   .container-fluid
     .row
       .col-md-3.col-sm-1
@@ -10,15 +9,25 @@ block content
           form(method='post', action='/users')
             .form-group
               label(for='email') Email
-              input#email.form-control(type='email', name='email', autofocus=true)
+              input#email.form-control(type='email', name='email', autofocus=true, required)
             .form-group
               label(for='twitter') Twitter
               #twitter.input-group
                 span#twitter.input-group-addon @
-                input#twitterForm.form-control(type='text', name='twitter')
-            .form-group
+                input#twitterForm.form-control(type='text', name='twitter', required)
+            #inputError.form-group
               label(for='password') Password
-              input#password.form-control(type='password', name='password')
+              input#password.form-control(type='password', name='password', required)
+              span#xIcon.glyphicon.glyphicon-remove.form-control-feedback
+              span#checkIcon.glyphicon.glyphicon-ok.form-control-feedback
             .form-group
-              button#register.btn.btn-default(type='submit') Register
+              label(for='confirmPass') Confirm Password
+              input#confirmPass.form-control(type='password', required)
+            .form-group
+              button#register.btn.btn-default.disabled(type='submit') Register
       .col-md-3.col-sm-1
+
+
+
+block scripts
+  script(src='/js/passValidation.js')

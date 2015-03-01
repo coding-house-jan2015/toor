@@ -5,7 +5,13 @@ block content
       .lead.title TOOR
       button.btn.btn-primary
        i.fa.fa-globe 
-       span.cta Let's go!
+       if email
+         a(href='/trips/new', style='color: rgba(255, 255, 255, 0.67);')
+           span.cta Let's go!
+       else
+         a(href='/login', style='color: white;') 
+          span.cta Let's go!
+         
     .row.api-row
       .logos
         img#sabre(src='/media/img/sabre.png')
