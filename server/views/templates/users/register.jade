@@ -1,20 +1,23 @@
 extends ../../layouts/master
 block content
 
-  h3 Register
-
   .row
-    .col-xs-4
-      form(method='post', action='/users')
-        .form-group
-          label(for='email') Email
-          input#email.form-control(type='email', name='email', autofocus=true)
-        .form-group
-          label(for='twitter') Twitter
-          input#twitter.form-control(type='text', name='twitter')
-        .form-group
-          label(for='password') Password
-          input#password.form-control(type='password', name='password')
-        .form-group
-          button.btn.btn-default(type='submit') Register
-    .col-xs-8
+    .col-xs-3
+    .col-xs-6
+      .jumbotron
+        h3.pageHeader Register
+        form(method='post', action='/users')
+          .form-group
+            label(for='email') Email
+            input#email.form-control(type='email', name='email', autofocus=true)
+          .form-group
+            label(for='twitter') Twitter
+            .input-group
+              span.input-group-addon @
+              input#twitter.form-control(type='text', name='twitter')
+          .form-group
+            label(for='password') Password
+            input#password.form-control(type='password', name='password')
+          .form-group
+            button.btn.btn-default(type='submit') Register
+    .col-xs-3
