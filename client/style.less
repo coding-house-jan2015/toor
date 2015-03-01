@@ -194,11 +194,22 @@ select#theme:focus{
   border-bottom:3px solid #fff;
 }
 
-.flights{
-
+.packages {
+  background: rgba(0, 0, 0, 0.54);
+  height: 150px;
+  border: none !important;
+  border-radius: 10px;
+  color: white;
+  margin-top: 5vh;
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-
-.packages, .trips{
+.trips a{
+  color: white;
+}
+.trips{
+  display: inline-block;
   background: rgba(0, 0, 0, 0.54);
   height: 150px;
   border: none !important;
@@ -219,13 +230,40 @@ select#theme:focus{
    content: "$ ";
 }
 
-p.fare, p.title{
+p.fare{
   font-size: 3.5vh;
   display: inline-block;
   float: left;
 }
 
+p.triptitle {
+  padding: 5px 0 0 0;
+  color: white;
+  font-size: 3vh;
+  display: inline;
+  float: left;
+}
+p.lbl {
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 1.8vh;
+}
+
+p.departure {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 50%;
+}
+p.return {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 50%;
+}
+
 p.city {
+  padding: 5px 0 0 0;
   float: left;
   font-size: 2vh;
   display: block;
@@ -277,13 +315,32 @@ img.bg {
   z-index: -1;
 }
 
+img.bg2 {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+  img.bg2 {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
-
 
 // *************** Login / Register CSS ***********************
 span#xIcon {

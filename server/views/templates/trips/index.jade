@@ -1,12 +1,23 @@
 extends ../../layouts/master
 block content
+  img.bg2(src='http://payload93.cargocollective.com/1/8/282864/4164246/IMG_0515_900.jpg')
   h3 Trips
-  .row
-    .col-sm-4
+    .row
       each trip in trips
-        .row
-          .col-sm-offset-1.col-sm-10.col-xs-offset-2.col-xs-8.trips
-            p.title: a(href='/trips/#{trip._id}/itinerary')= trip.title
-            p.departure= trip.departureDate
-            p.return= trip.returnDate
-            p.city= trip.destinationCity
+        .col-md-offset-1.col-md-4.col-sm-offset-1.col-sm-10.col-xs-offset-1.col-xs-10.trips: a(href='/trips/#{trip._id}/itinerary')
+          .row
+            .col-sm-offset-1.col-sm-10
+              p.triptitle= trip.title
+          .row
+            .col-sm-offset-1.col-sm-10
+              p.city= trip.destinationCity
+          .row
+            .col-xs-offset-1.col-xs-5
+              p.lbl Departure Date
+            .col-xs-offset-1.col-xs-5
+              p.lbl Return Date
+          .row
+            .col-xs-offset-1.col-xs-5
+              p.departure=moment(trip.departureDate).format('LL')
+            .col-xs-offset-1.col-xs-5
+              p.return=moment(trip.returnDate).format('LL')
