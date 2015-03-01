@@ -1,10 +1,10 @@
 extends ../../layouts/master
 block content
-
-  h3 New Trip
-
-  .row
-    .col-xs-4
+  img.bg(src='http://40.media.tumblr.com/851df5c29986631721244d0f99d7bc9a/tumblr_nizbxio4TC1slhhf0o1_1280.jpg')
+  .loader
+  //- .background
+  .row.new-trip-row
+    .col-xs-12.text-center
       form#flights(method='post', action='/trips/flights')
         .form-group
           label(for='title') Name of Trip
@@ -34,13 +34,10 @@ block content
             option SKIING 
             option THEME-PARK 
         .form-group
-          button.btn.btn-default#get-flights(type='submit') Explore Flights
+          button.btn.btn-success#get-flights(type='submit') Explore Flights
     .col-xs-8
 
-  .row
-    .col-xs-4
-      .flights
-    .col-xs-8
+  .row.flights
 
 block scripts
   script(src='/js/new-trip.js')

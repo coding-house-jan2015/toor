@@ -1,5 +1,5 @@
 /* Homepage Video */
-
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,%20800');
 
 video {
 position: fixed;
@@ -32,16 +32,17 @@ i.fa.fa-globe {
 }
 
 .title{
-  font-size: 22vw;
+  font-size: 20vw;
   color: rgba(255, 255, 255, 0.67);
   font-family: 'Helvetica Bold', sans-serif;
   font-weight: 700;
-  margin: 20px 0;
+  margin: 10px 0;
   text-transform: uppercase;
 }
 
 .cta{
   font-size:6vw;
+  font-family: 'Open Sans';
   text-align: center;
 }
 i.fa.fa-globe.nav-globe{
@@ -52,34 +53,42 @@ i.fa.fa-globe.nav-globe{
 
 /* Homepage Footer */
 
-.api-row,
-.tech-row{
-  background: rgba(0, 0, 0, 0.54);
+.api-row{
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0px;
+  width:100%;
 }
 
 .api-row{
-  margin-top:100px;
-  padding: 10px 0;
+  margin-top:75px;
 }
 
 .logos{
   display: inline-block;
-  width:19.7%;
+  width:9.7%;
   text-align:center;
   color:white;
 }
 
 .logos img{
-  padding-top:10px;
-  padding-bottom:10px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.logos img:hover{
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 #sabre{
   width:125px;
+  text-align:right;
 }
 
 #twitter{
-  width:80px;
+  width:50px;
+
 }
 
 #coinbase{
@@ -135,10 +144,118 @@ i.fa.fa-globe.nav-globe{
 //           animation-fill-mode: both;
 // }
 
-.flight{
+/* New Trips Page */
+
+.form-group {
+display: inline-block;
+}
+
+select.form-control#theme {
+  background: rgba(0, 0, 0, 0.54);
+  color: #fff;
+}
+
+.new-trip-row input{
+  background: rgba(0, 0, 0, 0.54);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.new-trip-row label{
+  color: #fff;
+}
+
+.new-trip-row input:focus,
+select#theme:focus{
+  border:3px solid #fff;
+}
+
+.flights{
+
+}
+
+.packages{
+  background: rgba(0, 0, 0, 0.54);
+  height: 150px;
+  border: none !important;
+  border-radius: 10px;
+  color: white;
+  margin-top: 5vh;
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.packages:hover {
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.fare:before {
+   content: "$ ";
+}
+
+p.fare {
+  font-size: 3.5vh;
   display: inline-block;
-  margin: 10px;
-  border: 1px solid black;
-  padding: 10px;
-  background-color: pink;
+  float: left;
+}
+
+p.city {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 100%;
+}
+
+p.airport {
+  font-size: 3.5vh;
+  display: inline-block;
+  float: right;
+}
+
+.fare:before {
+   content: "$ ";
+}
+
+.btn.btn-success#get-flights{
+  border-radius: 5px;
+  margin-left: 7px;
+  display: block;
+}
+
+
+/* animated loading gif */
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('/media/gif/load.gif') 50% 50% no-repeat rgba(0, 0, 0, 0.54);
+  visibility: hidden;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
