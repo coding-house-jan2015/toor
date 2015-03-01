@@ -1,23 +1,41 @@
 $(document).ready(init);
 
 function init(){
-  $('#get-destinations').click(getDestinations);
+  $('#get-flights').click(getFlights);
+  $('.flights').on('click', '.flight', createTrip);
 }
 
-function getDestinations(e){
+function getFlights(e){
   $.ajax({
-    url: $('#destination').attr('action'),
+    url: $('#flights').attr('action'),
     type:'post',
     dataType: 'json',
-    data: $('#destination').serialize(),
+    data: $('#flights').serialize(),
     success: function(response){
-      response.Destinations.forEach(function(d){
-        var country = d.Destination.CountryName;
-        var city = d.Destination.MetropolitanAreaName || d.Destination.CityName;
-        $('#city').append('<option>' + city + ', ' + country + '</option>')
+      response.results.forEach(function(f){
+        var html = '<div class="flight"><p class="fare">'+f.LowestFare+'</p><p class="airport">'+f.DestinationLocation+'</p><p class="city">'+f.DestinationCity+'</p></div>';
+        $('.flights').append(html);
       });
     }
   });
 
   e.preventDefault();
+}
+
+function createTrip(){
+ var data = $('#flights').serialize();
+ var fare = $(this).find('.fare').text();
+ var airport = $(this).find('.airport').text();
+ var city = $(this).find('.city').text();
+ data += '&fare=' + fare + '&destinationAirport=' + airport + '&destinationCity=' + city;
+
+ $.ajax({
+   url: '/trips',
+   type:'post',
+   dataType: 'json',
+   data: data,
+   success: function(response){
+     window.location = response.url;
+   }
+ });
 }
