@@ -12,5 +12,7 @@ module.exports = [
   {method: 'get', path: '/trips/new', config: require('../routes/trips/new')},
   {method: 'post', path: '/trips/flights', config: require('../routes/trips/flights')},
   {method: 'post', path: '/trips', config: require('../routes/trips/create')},
-  {method: 'get', path: '/trips/{tripId}/itinerary', config: require('../routes/trips/show')}
+  {method: 'get', path: '/trips/{tripId}/itinerary', config: require('../routes/trips/show')},
+
+  {method: 'post', path: '/messages', config: require('../routes/messages/')}
 ];
