@@ -208,11 +208,22 @@ select#theme:focus{
   border-bottom:3px solid #fff;
 }
 
-.flights{
-
+.packages {
+  background: rgba(0, 0, 0, 0.54);
+  height: 150px;
+  border: none !important;
+  border-radius: 10px;
+  color: white;
+  margin-top: 5vh;
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-
-.packages{
+.trips a{
+  color: white;
+}
+.trips{
+  display: inline-block;
   background: rgba(0, 0, 0, 0.54);
   height: 150px;
   border: none !important;
@@ -224,7 +235,7 @@ select#theme:focus{
   box-shadow:         3px 3px 5px 3px rgba(29, 29, 29, 0.7);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-.packages:hover {
+.packages:hover, .trips:hover{
   border: 3px solid white;
   cursor: pointer;
 }
@@ -233,13 +244,40 @@ select#theme:focus{
    content: "$ ";
 }
 
-p.fare {
+p.fare{
   font-size: 3.5vh;
   display: inline-block;
   float: left;
 }
 
+p.triptitle {
+  padding: 5px 0 0 0;
+  color: white;
+  font-size: 3vh;
+  display: inline;
+  float: left;
+}
+p.lbl {
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 1.8vh;
+}
+
+p.departure {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 50%;
+}
+p.return {
+  float: left;
+  font-size: 2vh;
+  display: block;
+  width: 50%;
+}
+
 p.city {
+  padding: 5px 0 0 0;
   float: left;
   font-size: 2vh;
   display: block;
@@ -291,13 +329,32 @@ img.bg {
   z-index: -1;
 }
 
+img.bg2 {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
     left: 50%;
     margin-left: -512px;   /* 50% */
   }
+  img.bg2 {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
-
 
 // *************** Login / Register CSS ***********************
 span#xIcon {
@@ -379,12 +436,115 @@ nav.navbar.navbar-default.animated-navbar.new-nav .btn-default{
   border: none;
 }
 
-.itinerary{
-  border: 1px dashed red;
-}
-
 #schedule{
-  border: 1px solid blue;
-  padding: 10px;
+  border: 1px solid white;
   height: 300px;
 }
+
+img.bg.show-page{
+  filter: blur(60px);
+}
+
+.trip-title{
+  display:block;
+  font-size: 8vh;
+  color: #fff;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+i.fa.fa-arrow-circle-left.inverse.fa-2x,
+i.fa.fa-arrow-circle-left.inverse.fa-flip-horizontal.fa-2x{
+  padding-top:15px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #fff;
+}
+
+.trip-depart,
+.trip-return{
+  color:#fff;
+  font-size: 3.5vh;
+}
+
+.trip-dest,
+h3.tweet-cta{
+  color: #fff;
+  font-size: 4vh;
+}
+
+.col-xs-12.text-center.tweet-button{
+  margin-top:15px;
+}
+
+.twitter-share-button{
+  width: 100px;
+}
+
+.row.generator {
+  background: rgba(237, 237, 237, 0.5);
+}
+
+.itinerary{
+  font-size: 3vh;
+  background: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+input[type="time"] {
+  line-height: 30px;
+  font-size: 3vh;
+  background: rgba(243, 243, 243, 0.32);
+}
+
+span.suggestion{
+  position: relative;
+  top: 25px;
+}
+
+input[type="time"]:focus{
+  border: 1px solid white;
+}
+i.fa.fa-map-marker,
+i.fa.fa-calendar,
+i.fa.fa-floppy-o{
+  font-size: 10vh;
+  color: #fff;
+}
+
+.itinerary.selected {
+  margin-top: 40px !important;
+}
+
+i.fa.fa-plus{
+  font-size: 3vh;
+}
+
+i.fa.fa-floppy-o{
+  color: #fff;
+}
+
+.col-xs-12.reco-hash {
+  font-size: 3vh;
+}
+
+.suggestion {
+  display: inline-block;
+}
+
+.col-sm-3.text-center {
+padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* comment */

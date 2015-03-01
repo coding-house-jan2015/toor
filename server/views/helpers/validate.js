@@ -7,6 +7,5 @@ module.exports = function validate(form) {
     alert('Your Passwords do not match. Please try again.');
     return false;
   }
-
   return true;
 };

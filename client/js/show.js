@@ -7,8 +7,8 @@ function init(){
 }
 
 function clickDate(){
-  $('.itinerary').css('background-color', 'white').removeClass('selected');
-  $(this).css('background-color', 'grey').addClass('selected');
+  $('.itinerary').css('background-color', 'rgba(199, 199, 199, 0.3)').removeClass('selected');
+  $(this).css('background-color', 'rgba(93, 93, 93, 0.3)').addClass('selected');
 
   $.ajax({
     url: '/trips/' + $('#trip-id').data('trip-id') + '/fetch?tripDate=' + $(this).text(),
@@ -19,7 +19,7 @@ function clickDate(){
       $('#schedule').empty();
 
       activities.forEach(function(a){
-        $('#schedule').append('<div class="schedule"><div class="name">'+a.name+'</div><div class="time">'+a.time+'</div></div>');  
+        $('#schedule').append('<div class="schedule"><div class="name">'+a.name+'</div><div class="time">'+a.time+'</div></div>');
       });
     }
   });
