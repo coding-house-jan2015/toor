@@ -4,14 +4,17 @@ block content
   h3 Login
 
   .row
-    .col-xs-4
-      form(method='post', action='/users/authenticate')
-        .form-group
-          label(for='email') Email
-          input#email.form-control(type='email', name='email', autofocus=true)
-        .form-group
-          label(for='password') Password
-          input#password.form-control(type='password', name='password')
-        .form-group
-          button.btn.btn-default(type='submit') Login
+    .col-xs-2
     .col-xs-8
+      .jumbotron
+        h3.pageHeader Login
+        form(method='post', action='/users/authenticate')
+          .form-group
+            label(for='email') Email
+            input#email.form-control(type='email', name='email', autofocus=true)
+          .form-group
+            label(for='password') Password
+            input#password.form-control(type='password', name='password')
+          .form-group
+            button.btn.btn-default(type='submit') Login
+    .col-xs-2
